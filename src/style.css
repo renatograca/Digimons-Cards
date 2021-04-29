@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digi-list {
+  border: 1px solid rgb(120,120,120);
+  background-color: grey;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.digi-card img{
+  width: 100%;
+}

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import  { Component } from 'react';
+import Api from './Api';
+import DigiList from './components/DigiList';
+import './style.css';
+import Header from './components/Header'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component{
+
+  state = {
+    digimons: [],
+  };
+
+  async componentDidMount(){
+    const response = await Api.get('');
+    console.log(response.data);
+    this.setState({digimons: response.data})
+  }
+
+  render(){
+    const {digimons} = this.state;
+    return(
+      <div>
+        <Header />        
+        <div className="body">
+        {digimons.map((digimon) =><DigiList digimon={digimon} key={digimon.name} /> )}
+        </div>
+      </div>
+    );
+  };
 }
 
 export default App;
