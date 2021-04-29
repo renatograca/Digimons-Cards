@@ -1,12 +1,26 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+form {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.header {
+  text-align: center;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top: 10px;
 
 }
 
 .body {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .digi-list {
@@ -14,8 +28,16 @@
   background-color: grey;
   max-width: 300px;
   box-sizing: border-box;
+  margin: 10px;
+  text-align: center;
 }
+
+
 
 .digi-card img{
   width: 100%;
+}
+
+.digi-card:hover {
+  background-color: rgb(240,240,240);
 }
